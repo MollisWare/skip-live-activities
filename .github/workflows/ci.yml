@@ -14,11 +14,14 @@ permissions:
 jobs:
   call-workflow:
     uses: skiptools/actions/.github/workflows/skip-framework.yml@v1
+    with:
+      # self-hosted macOS runner (the workflow default is a GitHub-hosted runner)
+      runs-on: '[["self-hosted", "macOS", "ephemeral"]]'
 
   # The Skip workflow does not compile the iOS-only ActivityKit code or the widget views,
   # so build both targets for the iOS simulator here.
   ios-build:
-    runs-on: macos-latest
+    runs-on: [self-hosted, macOS, ephemeral]
     steps:
       - uses: actions/checkout@v4
       - name: Build SkipLiveActivities and SkipLiveActivitiesUI for iOS

@@ -4,7 +4,7 @@
 import Foundation
 
 /// A countdown or count-up that the operating system renders without further updates.
-public struct LiveActivityTimer: Codable, Hashable, Sendable {
+public struct LiveActivityTimer: Hashable, Sendable {
     /// When the timer started. Used to compute elapsed progress.
     public var start: Date
     /// When the timer ends.
@@ -28,7 +28,7 @@ public struct LiveActivityTimer: Codable, Hashable, Sendable {
 }
 
 /// One step of a multi-step activity, such as warm-up, main set and cool-down.
-public struct LiveActivityStage: Codable, Hashable, Sendable {
+public struct LiveActivityStage: Hashable, Sendable {
     /// Short name of the step.
     public var title: String
     /// Relative length of the step. Stages are drawn proportionally to their weights.
@@ -45,7 +45,7 @@ public struct LiveActivityStage: Codable, Hashable, Sendable {
 /// The same content renders as an ActivityKit Live Activity on iOS and as a
 /// promoted ongoing notification on Android 16. The layout is a fixed template,
 /// so the look differs per platform but the information does not.
-public struct LiveActivityContent: Codable, Hashable, Sendable {
+public struct LiveActivityContent: Hashable, Sendable {
     /// Main line.
     public var title: String
     /// Secondary line.
@@ -90,6 +90,15 @@ public struct LiveActivityContent: Codable, Hashable, Sendable {
         return nil
     }
 }
+
+#if !SKIP
+// Codable is declared here, outside the transpiled and bridged declarations: in bridging mode Skip
+// generates a native Swift type for each public struct that cannot synthesize Codable (it wraps a
+// JNI peer). ActivityKit needs it on iOS, where the compiler synthesizes it from these extensions.
+extension LiveActivityTimer: Codable {}
+extension LiveActivityStage: Codable {}
+extension LiveActivityContent: Codable {}
+#endif
 
 /// Whether the app may show Live Activities.
 public enum LiveActivityPermission: String, Codable, Sendable {

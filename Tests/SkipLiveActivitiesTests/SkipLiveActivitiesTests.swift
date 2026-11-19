@@ -22,6 +22,7 @@ let logger: Logger = Logger(subsystem: "SkipLiveActivities", category: "Tests")
         #expect(content.deepLink == nil)
     }
 
+    #if !SKIP // Codable is iOS/macOS only, see LiveActivityTypes.swift
     @Test func testContentCodableRoundTrip() throws {
         let start = Date(timeIntervalSince1970: 1_000_000)
         let content = LiveActivityContent(
@@ -45,6 +46,7 @@ let logger: Logger = Logger(subsystem: "SkipLiveActivities", category: "Tests")
         #expect(decoded.stages[1].title == "Main set")
         #expect(decoded.deepLink?.absoluteString == "club://workout/42")
     }
+    #endif
 
     @Test func testTimerProgress() throws {
         let start = Date(timeIntervalSince1970: 1000)
