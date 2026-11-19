@@ -74,3 +74,7 @@ Carthage/Build/
 **/fastlane/README.md
 **/fastlane/Preview.html
 **/fastlane/test_output
+
+# Showcase app build output
+Showcase/.build/
+Showcase/Android/local.properties
