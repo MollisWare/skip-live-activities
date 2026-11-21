@@ -13,8 +13,8 @@ let package = Package(
         .library(name: "SkipLiveActivitiesUI", targets: ["SkipLiveActivitiesUI"]),
     ],
     dependencies: [
-        .package(url: "https://source.skip.tools/skip.git", from: "1.0.0"),
-        .package(url: "https://source.skip.tools/skip-kit.git", from: "1.0.0")
+        .package(url: "https://github.com/skiptools/skip.git", from: "1.9.4"),
+        .package(url: "https://github.com/skiptools/skip-kit.git", from: "1.0.0")
     ],
     targets: [
         .target(name: "SkipLiveActivities", dependencies: [
@@ -31,7 +31,7 @@ let package = Package(
 )
 
 if Context.environment["SKIP_BRIDGE"] ?? "0" != "0" {
-    package.dependencies += [.package(url: "https://source.skip.tools/skip-bridge.git", "0.0.0"..<"2.0.0")]
+    package.dependencies += [.package(url: "https://github.com/skiptools/skip-bridge.git", "0.0.0"..<"2.0.0")]
     // only the Skip modules take part in bridging; the iOS-only UI target stays plain Swift
     package.targets.filter({ $0.name != "SkipLiveActivitiesUI" }).forEach({ target in
         target.dependencies += [.product(name: "SkipBridge", package: "skip-bridge")]
