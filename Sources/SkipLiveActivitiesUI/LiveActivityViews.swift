@@ -1,5 +1,3 @@
-// Copyright 2026 MollisWare
-// SPDX-License-Identifier: Apache-2.0
 #if os(iOS)
 import SwiftUI
 import WidgetKit

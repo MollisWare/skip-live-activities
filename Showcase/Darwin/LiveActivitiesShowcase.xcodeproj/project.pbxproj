@@ -391,7 +391,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 0.0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mollisware.liveactivities.showcase.LiveActivityWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skiptools.liveactivities.showcase.LiveActivityWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
@@ -418,7 +418,7 @@
 					"@executable_path/../../Frameworks",
 				);
 				MARKETING_VERSION = 0.0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.mollisware.liveactivities.showcase.LiveActivityWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = com.skiptools.liveactivities.showcase.LiveActivityWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;

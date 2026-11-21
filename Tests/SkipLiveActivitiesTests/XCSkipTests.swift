@@ -1,5 +1,3 @@
-// Copyright 2026 MollisWare
-
 #if !SKIP_BRIDGE
 import Foundation
 #if os(macOS) || os(Linux) // Skip transpiled tests only run on supported hosts

@@ -1,6 +1,3 @@
-// Copyright 2026 MollisWare
-// SPDX-License-Identifier: Apache-2.0
-
 import Testing
 import OSLog
 import Foundation

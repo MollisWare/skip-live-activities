@@ -1,5 +1,3 @@
-// Copyright 2026 MollisWare
-// SPDX-License-Identifier: Apache-2.0
 #if !SKIP_BRIDGE
 #if !SKIP && os(iOS)
 import ActivityKit

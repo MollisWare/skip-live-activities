@@ -3,7 +3,7 @@ import OSLog
 import SwiftUI
 
 /// A logger for the LiveActivitiesShowcase module.
-let logger: Logger = Logger(subsystem: "com.mollisware.liveactivities.showcase", category: "LiveActivitiesShowcase")
+let logger: Logger = Logger(subsystem: "com.skiptools.liveactivities.showcase", category: "LiveActivitiesShowcase")
 
 /// The shared top-level view for the app, loaded from the platform-specific App delegates below.
 ///
